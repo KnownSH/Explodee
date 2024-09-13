@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "explodee",
+  "version": "${version}",
+  "name": "Explodee",
+  "description": "Explodee is a mod that makes explosions explodee-er",
+  "authors": [
+    "KnownSH"
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/explodee/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.knownsh.explodee.fabric.ExplodeeFabric"
+    ],
+    "client": [
+      "net.knownsh.explodee.fabric.client.ExplodeeFabricClient"
+    ]
+  },
+  "mixins": [
+    "explodee.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "~1.20.1",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
