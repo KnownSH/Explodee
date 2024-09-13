@@ -25,6 +25,8 @@ subprojects {
 
     repositories {
         mavenCentral()
+        maven { url = "https://api.modrinth.com/maven" }
+        maven { url = "https://maven.bawnorton.com/releases" }
     }
 
     dependencies {
@@ -65,4 +67,12 @@ subprojects {
 forgix {
     group = rootProject.maven_group
     mergedJarName = rootProject.archives_name
+
+    fabric {
+        jarLocation = "build/libs/explodee-fabric-${rootProject.mod_version}.jar"
+    }
+
+    forge {
+        jarLocation = "build/libs/explodee-forge-${rootProject.mod_version}.jar"
+    }
 }

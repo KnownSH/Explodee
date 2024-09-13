@@ -16,13 +16,11 @@
   "entrypoints": {
     "main": [
       "net.knownsh.explodee.fabric.ExplodeeFabric"
-    ],
-    "client": [
-      "net.knownsh.explodee.fabric.client.ExplodeeFabricClient"
     ]
   },
   "mixins": [
-    "explodee.mixins.json"
+    "explodee.mixins.json",
+    "explodee-fabric.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.16.5",
