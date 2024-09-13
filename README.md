@@ -4,4 +4,4 @@ Explodee changes the Minecraft explosion code to propagate in a spherical format
 
 **Note:** Explodee explosions do not work __exactly__ like vanilla explosions (i.e. there is a possibility that some neighboring TNT may not ignite if it is 3 blocks away). They are also visually very different, especially at larger explosion radii.
 
-Explodee works with Lithium (taking advantage of its explosion optimizations), and will behave nearly identically to in vanilla Explodee.
+Explodee works with Lithium (taking advantage of its explosion optimizations), and will behave nearly identically to vanilla Explodee.
