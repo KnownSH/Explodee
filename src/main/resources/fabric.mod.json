@@ -1,0 +1,54 @@
+{
+	"schemaVersion": 1,
+	"id": "explodee",
+	"version": "${version}",
+	"icon": "icon.png",
+
+	"name": "Explodee",
+	"description": "Improved explosion propagation for BTA!",
+	"authors": [
+		"Knownser"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+
+	"license": "CC0-1.0",
+
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"adapter": "kotlin",
+				"value": "derg.explodee.Explodee"
+			}
+		],
+		"beforeGameStart": [
+			{
+				"adapter": "kotlin",
+				"value": "derg.explodee.Explodee"
+			}
+		],
+		"afterGameStart": [
+			{
+				"adapter": "kotlin",
+				"value": "derg.explodee.Explodee"
+			}
+		]
+	},
+	"mixins": [
+      "explodee.mixins.json"
+	],
+
+	"depends": {
+		"fabricloader": ">=${fabricloader}",
+		"fabric-language-kotlin": ">=${fabric_language_kotlin}",
+		"halplibe": ">=${halplibe}",
+		"minecraft": "*",
+		"java": ">=${java}"
+	},
+	"suggests": {
+		"modmenu": ">=${modmenu}"
+	}
+}
