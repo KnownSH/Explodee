@@ -1,9 +1,6 @@
 import com.smushytaco.lwjgl_gradle.Preset
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	alias(libs.plugins.loom)
-	alias(libs.plugins.kotlin.jvm)
 	alias(libs.plugins.lwjgl)
 	java
 }
@@ -55,9 +52,6 @@ dependencies {
 	implementation(libs.halplibe)
 	implementation(libs.modMenu)
 	implementation(libs.legacyLwjgl)
-	implementation(libs.fabric.language.kotlin) {
-		libs.loader.get().apply { this@implementation.exclude(group, name) }
-	}
 
 	implementation(libs.slf4jApi)
 	implementation(libs.guava)
@@ -111,12 +105,6 @@ tasks {
 	withType<JavaExec>().configureEach { defaultCharacterEncoding = "UTF-8" }
 	withType<Javadoc>().configureEach { options.encoding = "UTF-8" }
 	withType<Test>().configureEach { defaultCharacterEncoding = "UTF-8" }
-	withType<KotlinCompile>().configureEach {
-		compilerOptions {
-			extraWarnings = true
-			jvmTarget = javaVersion.map { JvmTarget.valueOf("JVM_${if (it == 8) "1_8" else it}") }
-		}
-	}
 	withType<Jar>().configureEach {
 		licenseFile?.let {
 			from(it) {
@@ -128,7 +116,6 @@ tasks {
 		val resourceMap = mapOf(
 			"version" to modVersion.get(),
 			"fabricloader" to libs.versions.loader.get(),
-			"fabric_language_kotlin" to libs.versions.fabric.language.kotlin.get(),
 			"halplibe" to libs.versions.halplibe.get(),
 			"java" to libs.versions.java.get(),
 			"modmenu" to libs.versions.modMenu.get()

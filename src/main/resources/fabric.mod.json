@@ -19,22 +19,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			{
-				"adapter": "kotlin",
-				"value": "derg.explodee.Explodee"
-			}
+			"derg.explodee.Explodee"
 		],
 		"beforeGameStart": [
-			{
-				"adapter": "kotlin",
-				"value": "derg.explodee.Explodee"
-			}
-		],
-		"afterGameStart": [
-			{
-				"adapter": "kotlin",
-				"value": "derg.explodee.Explodee"
-			}
+			"derg.explodee.Explodee"
 		]
 	},
 	"mixins": [
@@ -43,7 +31,6 @@
 
 	"depends": {
 		"fabricloader": ">=${fabricloader}",
-		"fabric-language-kotlin": ">=${fabric_language_kotlin}",
 		"halplibe": ">=${halplibe}",
 		"minecraft": "*",
 		"java": ">=${java}"

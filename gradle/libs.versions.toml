@@ -3,8 +3,6 @@
 # Plugins
 # Check this on https://github.com/FabricMC/fabric-loom/releases/latest/
 loom = "1.15-SNAPSHOT"
-# Check this on https://kotlinlang.org/docs/releases.html
-kotlin = "2.3.0"
 # Check this on https://plugins.gradle.org/plugin/com.smushytaco.lwjgl3/
 lwjglPlugin = "1.0.2"
 ##########################################################################
@@ -27,8 +25,6 @@ modMenu = "4.0.0"
 halplibe = "5.4.0"
 # Check this on https://github.com/Better-than-Adventure/legacy-lwjgl3/releases/latest/
 legacyLwjgl = "1.0.6"
-# Check this on https://modrinth.com/mod/fabric-language-kotlin/versions/
-fabric-language-kotlin = "1.13.8+kotlin.2.3.0"
 ##########################################################################
 # Dependencies
 # Check this on https://central.sonatype.com/artifact/org.slf4j/slf4j-api/
@@ -50,7 +46,6 @@ loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "loader
 halplibe = { group = "turniplabs", name = "halplibe", version.ref = "halplibe" }
 modMenu = { group = "turniplabs", name = "modmenu-bta", version.ref = "modMenu" }
 legacyLwjgl = { group = "com.github.Better-than-Adventure", name = "legacy-lwjgl3", version.ref = "legacyLwjgl" }
-fabric-language-kotlin = { group = "net.fabricmc", name = "fabric-language-kotlin", version.ref = "fabric-language-kotlin" }
 slf4jApi = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4jApi" }
 guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
 log4j-slf4j2-impl = { group = "org.apache.logging.log4j", name = "log4j-slf4j2-impl", version.ref = "log4j" }
@@ -64,5 +59,4 @@ clientJar = { group = "objects", name = "client", version = "43db9b498cb67058d2e
 
 [plugins]
 loom = { id = "net.fabricmc.fabric-loom", version.ref = "loom" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 lwjgl = { id = "com.smushytaco.lwjgl3", version.ref = "lwjglPlugin" }

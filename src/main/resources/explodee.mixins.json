@@ -2,10 +2,15 @@
   "required": true,
   "package": "derg.explodee.mixin",
   "compatibilityLevel": "JAVA_${java}",
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  },
   "injectors": {
     "defaultRequire": 1
   },
-  "mixins": [],
+  "mixins": [
+    "ExplosionMixin"
+  ],
   "client": [
   ]
 }
