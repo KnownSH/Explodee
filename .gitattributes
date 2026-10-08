@@ -4,3 +4,4 @@ gradlew text eol=lf
 *.cmd text eol=crlf
 gradle-wrapper.jar -text -diff -merge -filter
 build-logic/** linguist-vendored=false
+build-logic/** linguist-detectable=true
