@@ -1,0 +1,21 @@
+[mod]
+id = "explodee"
+group = "derg"
+name = "Explodee"
+version = "1.1.0"
+authors = "Knownser"
+license = "MIT-0"
+description = "Replaces explosion raycasts with a sphere-based equilivent"
+
+["1.20.1-fabric"]
+deps.lithium = "mc1.20.1-0.11.4-fabric"
+["1.20.1-forge"]
+forge = "47.4.26"
+
+["1.21.1-fabric"]
+deps.lithium = "mc1.21.1-0.15.4-fabric"
+["1.21.1-forge"]
+forge = "52.1.16"
+["1.21.1-neoforge"]
+neoforge = "21.1.256"
+deps.lithium = "mc1.21.1-0.15.4-neoforge"

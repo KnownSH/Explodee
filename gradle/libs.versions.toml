@@ -1,0 +1,32 @@
+[versions]
+stonecutter = "0.9.8"
+# https://fabricmc.net/develop/
+fabric-loom = "1.18-SNAPSHOT"
+# https://projects.neoforged.net/neoforged/ModDevGradle
+neoforge-moddev = "2.0.148"
+forgegradle = "[7.0.29,8.0)"
+forge-jarjar = "0.2.3"
+
+fabric-loader = "0.19.5"
+mixinextras = "0.5.5"
+mixinsquared = "0.3.7"
+mixin-forge47 = "0.8.5"
+mixin-forge52 = "0.8.7"
+
+[libraries]
+kikugie-stonecutter = { module = "dev.kikugie:stonecutter", version.ref = "stonecutter" }
+fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric-loader" }
+mixinextras-common = { module = "io.github.llamalad7:mixinextras-common", version.ref = "mixinextras" }
+mixinextras-fabric = { module = "io.github.llamalad7:mixinextras-fabric", version.ref = "mixinextras" }
+mixinextras-forge = { module = "io.github.llamalad7:mixinextras-forge", version.ref = "mixinextras" }
+mixinextras-neoforge = { module = "io.github.llamalad7:mixinextras-neoforge", version.ref = "mixinextras" }
+mixinsquared-fabric = { module = "com.github.bawnorton.mixinsquared:mixinsquared-fabric", version.ref = "mixinsquared" }
+mixin-forge47 = { module = "org.spongepowered:mixin", version.ref = "mixin-forge47" }
+mixin-forge52 = { module = "org.spongepowered:mixin", version.ref = "mixin-forge52" }
+
+[plugins]
+fabric-loom = { id = "net.fabricmc.fabric-loom-remap", version.ref = "fabric-loom" }
+neoforge-moddev = { id = "net.neoforged.moddev", version.ref = "neoforge-moddev" }
+neoforge-legacyforge = { id = "net.neoforged.moddev.legacyforge", version.ref = "neoforge-moddev" }
+forgegradle = { id = "net.minecraftforge.gradle", version.ref = "forgegradle" }
+forge-jarjar = { id = "net.minecraftforge.jarjar", version.ref = "forge-jarjar" }
