@@ -31,9 +31,11 @@ enum class Loader { FABRIC, FORGE, NEOFORGE }
 abstract class ExplodeeBuildExtension {
     abstract val minecraftVersion: Property<String>
     abstract val modIdProp: Property<String>
+    abstract val obfuscatedProp: Property<Boolean>
 
     val minecraft: String get() = minecraftVersion.get()
     val modId: String get() = modIdProp.get()
+    val obfuscated: Boolean get() = obfuscatedProp.get()
 }
 
 abstract class ExplodeeBuildPlugin : Plugin<Project> {
@@ -47,11 +49,17 @@ abstract class ExplodeeBuildPlugin : Plugin<Project> {
         sc.properties.tags(mc, rawLoader)
 
         val modId = prop("mod.id")
-        val javaVer = if (sc.eval(sc.current.version, ">=1.20.5")) 21 else 17
+        val obfuscated = sc.eval(sc.current.version, "<26.1")
+        val javaVer = when {
+            !obfuscated -> 25
+            sc.eval(sc.current.version, ">=1.20.5") -> 21
+            else -> 17
+        }
 
         extensions.create<ExplodeeBuildExtension>("explodee").apply {
             minecraftVersion.convention(mc)
             modIdProp.convention(modId)
+            obfuscatedProp.convention(obfuscated)
         }
 
         // this would be like "1.1.0+1.20.1-fabric"
@@ -60,7 +68,8 @@ abstract class ExplodeeBuildPlugin : Plugin<Project> {
         extensions.configure<BasePluginExtension> { archivesName.set(modId) }
 
         when {
-            loader == Loader.FABRIC -> apply(plugin = "net.fabricmc.fabric-loom-remap")
+            loader == Loader.FABRIC && obfuscated -> apply(plugin = "net.fabricmc.fabric-loom-remap")
+            loader == Loader.FABRIC -> apply(plugin = "net.fabricmc.fabric-loom")
             loader == Loader.NEOFORGE -> apply(plugin = "net.neoforged.moddev")
             fg7 -> {
                 apply(plugin = "net.minecraftforge.gradle")
@@ -80,7 +89,7 @@ abstract class ExplodeeBuildPlugin : Plugin<Project> {
             if (loader == Loader.FORGE) manifest.attributes("MixinConfigs" to "$modId.mixins.json")
         }
 
-        registerCollect(if (loader == Loader.FABRIC) "remapJar" else if (fg7) "jarJar" else "jar")
+        registerCollect(if (loader == Loader.FABRIC && obfuscated) "remapJar" else if (fg7) "jarJar" else "jar")
         afterEvaluate { configureResources(loader, mc, modId, javaVer) }
     }
 
@@ -96,7 +105,9 @@ abstract class ExplodeeBuildPlugin : Plugin<Project> {
             "authors" to prop("mod.authors"),
             "license" to prop("mod.license"),
             "minecraft" to mc,
-            "java" to "JAVA_$javaVer",
+            "minecraft_range" to (findProperty("minecraft_range") as String? ?: "~$mc"),
+            "java" to "$javaVer",
+            "mixinextras" to mixinextras,
             "pack_format" to if (mc == "1.20.1") 15 else 34,
             "dependencies" to modsTomlDependencies(loader, modId, mc),
         )

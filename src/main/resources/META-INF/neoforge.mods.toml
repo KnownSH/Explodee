@@ -1,0 +1,18 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "${license}"
+
+[[mods]]
+modId = "${id}"
+version = "${version}"
+displayName = "${name}"
+authors = "${authors}"
+description = '''${description}'''
+logoFile = "assets/explodee/icon.png"
+
+[[mixins]]
+config = "explodee.mixins.json"
+[[mixins]]
+config = "explodee-compat.mixins.json"
+
+${dependencies}

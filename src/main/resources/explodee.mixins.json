@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "derg.explodee.mixin",
+  "compatibilityLevel": "JAVA_${java}",
+  "refmap": "explodee.refmap.json",
+  "mixinextras": {
+    "minVersion": "${mixinextras}"
+  },
+  "mixins": [
+    "ExplosionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

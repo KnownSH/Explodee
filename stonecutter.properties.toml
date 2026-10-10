@@ -5,17 +5,36 @@ name = "Explodee"
 version = "1.1.0"
 authors = "Knownser"
 license = "MIT-0"
-description = "Replaces explosion raycasts with a sphere-based equilivent"
+description = "Replaces explosion raycasts with a sphere-based equilivent, aka making things explodee-er!"
 
+["1.20.1"]
+parchment = "2023.09.03"
 ["1.20.1-fabric"]
+minecraft_range = ">=1.19 <1.21.2-"
+deps.fabric_api = "0.92.12"
 deps.lithium = "mc1.20.1-0.11.4-fabric"
+deps.modmenu = "7.2.2"
 ["1.20.1-forge"]
 forge = "47.4.26"
 
-["1.21.1-fabric"]
-deps.lithium = "mc1.21.1-0.15.4-fabric"
+["1.21.1"]
+parchment = "2024.11.17"
 ["1.21.1-forge"]
 forge = "52.1.16"
 ["1.21.1-neoforge"]
 neoforge = "21.1.256"
 deps.lithium = "mc1.21.1-0.15.4-neoforge"
+
+["1.21.11"]
+parchment = "2025.12.20"
+["1.21.11-fabric"]
+minecraft_range = ">=1.21.2 <1.22-"
+deps.fabric_api = "0.141.6"
+deps.lithium = "mc1.21.11-0.21.4-fabric"
+deps.modmenu = "17.0.1"
+
+["26.3-fabric"]
+minecraft_range = ">=26.1 <26.4-"
+deps.fabric_api = "0.162.0"
+deps.lithium = "mc26.3-0.26.2-fabric"
+deps.modmenu = "21.0.0"

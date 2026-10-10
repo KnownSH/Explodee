@@ -1,0 +1,13 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+license = "${license}"
+
+[[mods]]
+modId = "${id}"
+version = "${version}"
+displayName = "${name}"
+authors = "${authors}"
+description = '''${description}'''
+logoFile = "assets/explodee/icon.png"
+
+${dependencies}

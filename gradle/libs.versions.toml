@@ -20,6 +20,8 @@ mixinextras-common = { module = "io.github.llamalad7:mixinextras-common", versio
 mixinextras-fabric = { module = "io.github.llamalad7:mixinextras-fabric", version.ref = "mixinextras" }
 mixinextras-forge = { module = "io.github.llamalad7:mixinextras-forge", version.ref = "mixinextras" }
 mixinextras-neoforge = { module = "io.github.llamalad7:mixinextras-neoforge", version.ref = "mixinextras" }
+mixinsquared-common = { module = "com.github.bawnorton.mixinsquared:mixinsquared-common", version.ref = "mixinsquared" }
+mixinsquared-neoforge = { module = "com.github.bawnorton.mixinsquared:mixinsquared-neoforge", version.ref = "mixinsquared" }
 mixinsquared-fabric = { module = "com.github.bawnorton.mixinsquared:mixinsquared-fabric", version.ref = "mixinsquared" }
 mixin-forge47 = { module = "org.spongepowered:mixin", version.ref = "mixin-forge47" }
 mixin-forge52 = { module = "org.spongepowered:mixin", version.ref = "mixin-forge52" }

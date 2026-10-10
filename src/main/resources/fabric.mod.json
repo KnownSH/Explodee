@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "${id}",
+	"version": "${version}",
+	"name": "${name}",
+	"description": "${description}",
+	"authors": [
+		"${authors}"
+	],
+	"license": "${license}",
+	"icon": "assets/explodee/icon.png",
+	"environment": "*",
+	"entrypoints": {},
+	"mixins": [
+		"explodee.mixins.json",
+		"explodee-compat.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16",
+		"minecraft": "${minecraft_range}",
+		"java": ">=${java}"
+	}
+}

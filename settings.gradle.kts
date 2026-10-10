@@ -7,6 +7,8 @@ pluginManagement {
 		maven("https://maven.minecraftforge.net/") { name = "MinecraftForge" }
 		maven("https://maven.kikugie.dev/releases") { name = "KikuGie Releases" }
 		maven("https://maven.kikugie.dev/snapshots") { name = "KikuGie Snapshots" }
+		maven("https://maven.parchmentmc.org") { name = "ParchmentMC" }
+		maven("https://maven.terraformersmc.com/") { name = "TerraformersMC" }
 	}
 	includeBuild("build-logic")
 }
@@ -27,8 +29,10 @@ stonecutter {
 			} }
 
 		match("1.20.1", "fabric", "forge")
-		match("1.21.1", "fabric", "forge", "neoforge")
+		match("1.21.1", "forge", "neoforge")
+		match("1.21.11", "fabric")
+		match("26.3", "fabric")
 
-		vcsVersion = "1.21.1-fabric"
+		vcsVersion = "1.20.1-fabric"
 	}
 }
