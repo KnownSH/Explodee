@@ -21,7 +21,11 @@ public final class ExplodeeMixinPlugin implements IMixinConfigPlugin {
 			.flatMap(lithium -> lithium.findPath(path))
 			.isPresent();
 		*///?}
-		//? !fabric
+		//? neoforge {
+		/*String path = LITHIUM_EXPLOSION_MIXIN.replace('.', '/') + ".class";
+		return ExplodeeMixinPlugin.class.getClassLoader().getResource(path) != null;
+		*///?}
+		//? forge
 		return false;
 	}
 

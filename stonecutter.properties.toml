@@ -15,13 +15,19 @@ deps.fabric_api = "0.92.12"
 deps.lithium = "mc1.20.1-0.11.4-fabric"
 deps.modmenu = "7.2.2"
 ["1.20.1-forge"]
+minecraft_range = "[1.19.1,1.20.5)"
+forge_range = "[42,)"
 forge = "47.4.26"
 
 ["1.21.1"]
 parchment = "2024.11.17"
 ["1.21.1-forge"]
+minecraft_range = "[1.20.6,1.21.2)"
+forge_range = "[50,)"
 forge = "52.1.16"
 ["1.21.1-neoforge"]
+minecraft_range = "[1.20.6,1.21.2)"
+neoforge_range = "[20.6,)"
 neoforge = "21.1.256"
 deps.lithium = "mc1.21.1-0.15.4-neoforge"
 
@@ -32,6 +38,15 @@ minecraft_range = ">=1.21.2 <1.22-"
 deps.fabric_api = "0.141.6"
 deps.lithium = "mc1.21.11-0.21.4-fabric"
 deps.modmenu = "17.0.1"
+["1.21.11-forge"]
+minecraft_range = "[1.21.2,)"
+forge_range = "[53,)"
+forge = "61.2.1"
+["1.21.11-neoforge"]
+minecraft_range = "[1.21.2,)"
+neoforge_range = "[21.2,)"
+neoforge = "21.11.45"
+deps.lithium = "mc1.21.11-0.21.4-neoforge"
 
 ["26.3-fabric"]
 minecraft_range = ">=26.1 <26.4-"

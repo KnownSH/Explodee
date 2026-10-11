@@ -24,13 +24,13 @@ stonecutter {
 	create(rootProject) {
 		fun match(version: String, vararg loaders: String) =
 			loaders.forEach { version("$version-$it", version).let { node ->
-				val loader = if (it == "forge" && version == "1.21.1") "fg7" else it
+				val loader = if (it == "forge" && version != "1.20.1") "fg7" else it
 				node.buildscript = "build.$loader.gradle.kts"
 			} }
 
 		match("1.20.1", "fabric", "forge")
 		match("1.21.1", "forge", "neoforge")
-		match("1.21.11", "fabric")
+		match("1.21.11", "fabric", "forge", "neoforge")
 		match("26.3", "fabric")
 
 		vcsVersion = "1.20.1-fabric"

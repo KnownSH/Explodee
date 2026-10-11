@@ -16,8 +16,10 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
-//? >=1.21.2
+//? !forge && >=1.21.2
 //@Mixin(ServerExplosion.class)
+//? forge && >=1.21.2
+//@Mixin(value = ServerExplosion.class, remap = false)
 //? !forge && <1.21.2 || <1.21
 //@Mixin(Explosion.class)
 //? forge && >=1.21 && <1.21.2

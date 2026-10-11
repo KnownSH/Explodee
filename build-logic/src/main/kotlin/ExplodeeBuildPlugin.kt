@@ -107,6 +107,7 @@ abstract class ExplodeeBuildPlugin : Plugin<Project> {
             "minecraft" to mc,
             "minecraft_range" to (findProperty("minecraft_range") as String? ?: "~$mc"),
             "java" to "$javaVer",
+            "mixin_java" to if (loader == Loader.FORGE) "17" else "$javaVer",
             "mixinextras" to mixinextras,
             "pack_format" to if (mc == "1.20.1") 15 else 34,
             "dependencies" to modsTomlDependencies(loader, modId, mc),
@@ -148,10 +149,10 @@ abstract class ExplodeeBuildPlugin : Plugin<Project> {
             |side = "BOTH"
             """.trimMargin()
 
-        val loaderDep = if (forge) dep("forge", "[${prop("forge").substringBefore('.')},)")
-            else dep("neoforge", "[${prop("neoforge").split('.').take(2).joinToString(".")},)")
+        val loaderDep = if (forge) dep("forge", findProperty("forge_range") as String? ?: "[${prop("forge").substringBefore('.')},)")
+            else dep("neoforge", findProperty("neoforge_range") as String? ?: "[${prop("neoforge").split('.').take(2).joinToString(".")},)")
 
-        return loaderDep + "\n\n" + dep("minecraft", "[$mc]")
+        return loaderDep + "\n\n" + dep("minecraft", findProperty("minecraft_range") as String? ?: "[$mc]")
     }
 
     private fun Project.registerCollect(jarTask: String) {
