@@ -1,5 +1,5 @@
 {
-  "required": true,
+  "required": false,
   "minVersion": "0.8",
   "package": "derg.explodee.mixin.compat",
   "compatibilityLevel": "JAVA_${mixin_java}",
@@ -12,6 +12,6 @@
     "LithiumExplosionMixinMixin"
   ],
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 0
   }
 }

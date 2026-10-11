@@ -62,8 +62,8 @@ abstract class ExplodeeBuildPlugin : Plugin<Project> {
             obfuscatedProp.convention(obfuscated)
         }
 
-        // this would be like "1.1.0+1.20.1-fabric"
-        version = "${prop("mod.version")}+$mc-$rawLoader"
+        // this would be like "1.1.0+1.19-1.21.1-fabric"
+        version = "${prop("mod.version")}+${findProperty("version_range") ?: mc}-$rawLoader"
         group = prop("mod.group")
         extensions.configure<BasePluginExtension> { archivesName.set(modId) }
 

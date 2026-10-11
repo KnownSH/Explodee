@@ -7,7 +7,7 @@ plugins {
 	alias(libs.plugins.forge.jarjar) apply false
 }
 
-stonecutter active "1.21.1-forge"
+stonecutter active "1.20.1-forge"
 
 stonecutter parameters {
 	val (_, loader) = current.project.split("-", limit = 2)
